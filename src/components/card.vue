@@ -66,14 +66,14 @@
           ${{ product.price }}
         </span>
 
-        <RouterLink :to="`/product/${product.id}`"
-          ><button
-            class="btn btn-sm btn-primary"
-            :disabled="product.stock === 0"
-          >
-            view details
-          </button></RouterLink
+        <RouterLink
+          :to="`/product/${product.id}`"
+          class="btn btn-sm btn-primary"
+          :class="{ 'btn-disabled pointer-events-none': product.stock === 0 }"
+          :aria-disabled="product.stock === 0"
         >
+          view details
+        </RouterLink>
       </div>
     </div>
   </div>

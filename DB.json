@@ -1,0 +1,120 @@
+{
+  "products": [
+    {
+      "id": "101",
+      "title": "Orbit Wireless Headphones",
+      "description": "Comfort-focused wireless headphones with clear mids, punchy bass, and 30-hour battery life.",
+      "price": 129.99,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Black wireless headphones on a white background",
+      "tags": [
+        "audio",
+        "wireless",
+        "best-seller"
+      ],
+      "stock": 0
+    },
+    {
+      "id": "102",
+      "title": "Pulse Smartwatch",
+      "description": "Track heart rate, sleep, and daily activity with a bright display and water-resistant build.",
+      "price": 89.5,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Smartwatch close-up on a soft background",
+      "badges": [
+        "new"
+      ],
+      "tags": [
+        "wearables",
+        "fitness",
+        "new"
+      ],
+      "stock": 2
+    },
+    {
+      "id": "103",
+      "title": "Aero Mechanical Keyboard",
+      "description": "Low-profile mechanical keyboard with hot-swappable switches and subtle RGB backlight.",
+      "price": 149,
+      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Mechanical keyboard on a desk",
+      "tags": [
+        "accessories",
+        "keyboard",
+        "gaming"
+      ],
+      "stock": 0
+    },
+    {
+      "id": "104",
+      "title": "Nova 4K Webcam",
+      "description": "Ultra-clear 4K webcam with dual microphones and auto-light correction for meetings.",
+      "price": 109,
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Webcam mounted on top of a monitor",
+      "badges": [
+        "new"
+      ],
+      "tags": [
+        "video",
+        "work",
+        "creator"
+      ],
+      "stock": 17
+    },
+    {
+      "id": "105",
+      "title": "Echo Bluetooth Speaker",
+      "description": "Portable Bluetooth speaker with deep bass and 20-hour battery life.",
+      "price": 59.99,
+      "image": "https://images.unsplash.com/photo-1585386959984-a41552231658?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Portable bluetooth speaker",
+      "tags": [
+        "audio",
+        "portable"
+      ],
+      "stock": 22
+    },
+    {
+      "id": "106",
+      "title": "Zen Wireless Mouse",
+      "description": "Ergonomic wireless mouse with silent clicks and adjustable DPI.",
+      "price": 34.99,
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Wireless mouse on desk",
+      "tags": [
+        "accessories",
+        "mouse"
+      ],
+      "stock": 30
+    },
+    {
+      "id": "107",
+      "title": "UltraWide Monitor 34\"",
+      "description": "34-inch ultrawide monitor ideal for productivity and immersive gaming.",
+      "price": 399.99,
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Ultrawide monitor on desk setup",
+      "tags": [
+        "monitor",
+        "gaming",
+        "work"
+      ],
+      "stock": 7
+    },
+    {
+      "id": "108",
+      "title": "Pro Studio Microphone",
+      "description": "USB condenser microphone perfect for podcasts, streaming, and voice recording.",
+      "price": 119.99,
+      "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Studio microphone on stand",
+      "tags": [
+        "audio",
+        "creator"
+      ],
+      "stock": 14
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

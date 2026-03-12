@@ -31,21 +31,35 @@
       </div>
 
       <div class="navbar-end">
-        <button class="btn btn-ghost btn-circle" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
+        <RouterLink to="/cart" class="btn btn-ghost btn-circle" aria-label="Cart">
+          <div class="indicator">
+            <span
+              v-if="cartCount"
+              class="badge badge-primary badge-sm indicator-item"
+            >
+              {{ cartCount }}
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L5.4 5M7 13l-1.2 6H19m-8-6v6m6-6v6" />
+            </svg>
+          </div>
+        </RouterLink>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import { computed } from "vue";
+import { useCartStore } from "@/stores/cartStore";
+
 type NavLink = {
-  id: number;
+  id: string;
   label: string;
   href: string;
 };
+
+const cartStore = useCartStore();
+const cartCount = computed(() => cartStore.cartCount);
 
 defineProps<{
   links: NavLink[];

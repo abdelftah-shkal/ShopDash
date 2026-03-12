@@ -1,22 +1,48 @@
 <script setup lang="ts">
 import Navbar from "@/components/nav.vue";
 import FooterComp from "@/components/footerComp.vue";
-import { RouterView } from "vue-router";
+import { RouterView, useRouter } from "vue-router";
+import { computed, onMounted } from "vue";
+import { useProductStore } from "@/stores/productStore";
+import { useCartStore } from "@/stores/cartStore";
+
+type AppLink = {
+  id: string;
+  label: string;
+  href: string;
+};
+
 const footerBrand = "ShopDash";
+const router = useRouter();
+const productStore = useProductStore();
+const cartStore = useCartStore();
 
-const navLinks = [
-  { id: 1, label: "Home", href: "/" },
-  { id: 2, label: "About", href: "/about" },
-  { id: 3, label: "Product", href: "/product/101" },
-];
+const toAppLink = (route: any): AppLink => ({
+  id: String(route.name ?? route.path),
+  label: String(route.meta?.label ?? route.name ?? route.path),
+  href: String(route.meta?.href ?? route.path),
+});
 
-const footerLinks = [
-  { id: 1, label: "Privacy", href: "#" },
-  { id: 2, label: "Terms", href: "#" },
-  { id: 3, label: "Support", href: "#" },
-];
+const navLinks = computed(() =>
+  router.options.routes
+    .filter((route) => route.meta?.showInNav)
+    .map(toAppLink),
+);
 
-const footerText = "Sample footer using DaisyUI";
+const footerLinks = computed(() =>
+  router.options.routes
+    .filter((route) => route.meta?.showInFooter)
+    .map(toAppLink),
+);
+
+const footerText = "The most interisting shop";
+
+onMounted(() => {
+  cartStore.loadFromStorage();
+  if (!productStore.products.length) {
+    productStore.getAllProducts();
+  }
+});
 </script>
 
 <template>

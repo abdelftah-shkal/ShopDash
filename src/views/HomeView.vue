@@ -16,43 +16,15 @@
 </template>
 <script setup lang="ts">
 import carouselcomp from "@/components/carouselcomp.vue";
-import { onMounted, onUnmounted } from "vue";
-const featuredProducts = [
-  {
-    id: 101,
-    title: "Orbit Wireless Headphones",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Black wireless headphones on a white background",
-  },
-  {
-    id: 102,
-    title: "Pulse Smartwatch",
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Smartwatch close-up on a soft background",
-  },
-  {
-    id: 103,
-    title: "Aero Mechanical Keyboard",
-    image:
-      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Mechanical keyboard on a desk",
-  },
-  {
-    id: 104,
-    title: "Nova 4K Webcam",
-    image:
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Webcam mounted on top of a monitor",
-  },
-];
+import { computed, onMounted } from "vue";
+import { useProductStore } from "@/stores/productStore";
+
+const productStore = useProductStore();
+const featuredProducts = computed(() => productStore.featuredProducts);
 
 onMounted(() => {
-  console.log("Mounted", featuredProducts);
-});
-
-onUnmounted(() => {
-  console.log("Removed", featuredProducts);
+  if (!productStore.products.length) {
+    productStore.getAllProducts();
+  }
 });
 </script>

@@ -11,14 +11,14 @@
       </aside>
 
       <nav class="flex flex-wrap items-center gap-3">
-        <a
+        <RouterLink
           v-for="link in links"
           :key="link.id"
-          :href="link.href"
+          :to="link.href"
           class="btn btn-ghost btn-sm hover:bg-secondary hover:text-secondary-content"
         >
           {{ link.label }}
-        </a>
+        </RouterLink>
       </nav>
     </div>
   </footer>
@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 type FooterLink = {
-  id: number;
+  id: string;
   label: string;
   href: string;
 };
