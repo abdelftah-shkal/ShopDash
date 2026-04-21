@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full bg-base-100/95 border-b border-primary/15 shadow-sm backdrop-blur">
+  <div class="w-full bg-base-100/95 border-b border-primary/15 shadow-sm backdrop-blur flex items-center justify-center">
     <div class="navbar max-w-6xl mx-auto px-4">
-      <div class="navbar-start">
+      <div class="navbar-start mx-auto">
         <div class="dropdown md:hidden">
           <button tabindex="0" class="btn btn-ghost btn-circle" aria-label="Open menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -3,7 +3,7 @@
     class="w-full bg-base-100/95 border-t border-primary/15 shadow-sm"
   >
     <div
-      class="max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      class="max-w-6xl !m-auto px-6 py-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
     >
       <aside class="space-y-1">
         <p class="text-lg font-semibold text-primary">{{ brand }}</p>
