@@ -15,5 +15,7 @@ export function useProductStore(): {
   ) => Promise<any>
   decreaseStock: (id: number | string) => Promise<void>
   incStock: (id: number | string) => Promise<void>
+  decrementLocalStock: (id: number | string) => void
+  incrementLocalStock: (id: number | string, qty?: number) => void
   getRelatedProducts: any[]
 }

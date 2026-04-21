@@ -52,6 +52,7 @@ const buyHandler = (productId: number) => {
   const product = productStore.getProductById(productId);
   if (product) {
     cartStore.addToCart(product);
+    productStore.decrementLocalStock(productId);
   }
 };
 

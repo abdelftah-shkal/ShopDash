@@ -12,7 +12,7 @@
           <button
             v-if="cartStore.cartItems.length"
             class="btn btn-ghost"
-            @click="cartStore.clearCart()"
+            @click="clearAll"
           >
             Clear cart
           </button>
@@ -55,7 +55,7 @@
                 </div>
                 <button
                   class="btn btn-ghost btn-sm"
-                  @click="cartStore.removeFromCart(item.id)"
+                  @click="removeItem(item)"
                 >
                   Remove
                 </button>
@@ -131,9 +131,29 @@ const productStore = useProductStore();
 const isCheckingOut = ref(false);
 const checkoutMessage = ref("");
 
+const removeItem = (item: any) => {
+  productStore.incrementLocalStock(item.id, item.quantity);
+  cartStore.removeFromCart(item.id);
+};
+
+const clearAll = () => {
+  for (const item of cartStore.cartItems) {
+    productStore.incrementLocalStock(item.id, item.quantity);
+  }
+  cartStore.clearCart();
+};
+
 const updateQuantity = (productId: number, quantity: number, maxStock: number) => {
   checkoutMessage.value = "";
+  const item = cartStore.cartItems.find((i: any) => i.id === productId);
+  const oldQty = item?.quantity ?? 0;
   cartStore.updateQuantity(productId, quantity, maxStock);
+  const diff = quantity - oldQty;
+  if (diff < 0) {
+    productStore.incrementLocalStock(productId, -diff);
+  } else if (diff > 0) {
+    productStore.decrementLocalStock(productId);
+  }
 };
 
 const completeCheckout = async () => {

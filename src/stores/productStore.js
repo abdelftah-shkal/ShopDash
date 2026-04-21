@@ -172,6 +172,24 @@ export const useProductStore = defineStore("products", () => {
     }
   };
 
+  const decrementLocalStock = (id) => {
+    const product = getProductById(id);
+    if (!product || product.stock < 1) return;
+    product.stock -= 1;
+    if (Number(featuredProduct.value?.id) === Number(id)) {
+      featuredProduct.value = { ...featuredProduct.value, stock: featuredProduct.value.stock - 1 };
+    }
+  };
+
+  const incrementLocalStock = (id, qty = 1) => {
+    const product = getProductById(id);
+    if (!product) return;
+    product.stock += qty;
+    if (Number(featuredProduct.value?.id) === Number(id)) {
+      featuredProduct.value = { ...featuredProduct.value, stock: featuredProduct.value.stock + qty };
+    }
+  };
+
   const getRelatedProducts = computed(() => {
     if (!featuredProduct.value) return [];
 
@@ -194,6 +212,8 @@ export const useProductStore = defineStore("products", () => {
     getOneProduct,
     decreaseStock,
     incStock,
+    decrementLocalStock,
+    incrementLocalStock,
     getRelatedProducts,
   };
 });

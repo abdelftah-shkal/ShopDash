@@ -12,7 +12,7 @@
         "wireless",
         "best-seller"
       ],
-      "stock": 0
+      "stock": 4
     },
     {
       "id": "102",
@@ -29,7 +29,7 @@
         "fitness",
         "new"
       ],
-      "stock": 0
+      "stock": 8
     },
     {
       "id": "103",
@@ -43,7 +43,7 @@
         "keyboard",
         "gaming"
       ],
-      "stock": 0
+      "stock": 5
     },
     {
       "id": "104",
@@ -73,7 +73,7 @@
         "accessories",
         "mouse"
       ],
-      "stock": 30
+      "stock": 3
     },
     {
       "id": "107",
@@ -87,7 +87,7 @@
         "gaming",
         "work"
       ],
-      "stock": 7
+      "stock": 6
     },
     {
       "id": "108",
